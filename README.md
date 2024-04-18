@@ -1,16 +1,16 @@
-# PJA-ASI-14C-GR4
+# SUMLS
 
 ## Contributors
-- Cezary Sieczkowski s22595
+- Marcin Andruszczak s23056
 - Konrad Szwarc s23087
 - Patryk Polnik s22515
-- Tomasz Iwanowski s18438
+- Grzegorz Bieliński s23474
 
-## Instrukcja uruchomienia środowiska
-1. Pobierz i zainstaluj [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
-2. Pobierz plik `environment.yml` z katalogu `env`
-3. W terminalu wykonaj polecenie `conda env create -f environment.yml`
-4. Uruchom utworzone środowisko wykonując polecenie `conda activate ASI`
+## Environment setup
+1. Download and install [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
+2. Download file `environment.yml` from catalog `env`
+3. In terminal use `conda env create -f environment.yml`
+4. Avtivate environment using command `conda activate ASI`
 
 <h2>Crab age prediction model</h2>
 
