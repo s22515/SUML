@@ -14,6 +14,8 @@
 
 <h2>Crab age prediction model</h2>
 
+<p>Data source on Kaggle: <a href="https://www.kaggle.com/datasets/sidhus/crab-age-prediction">Crab Age Prediction</a></p>
+
 <p>The model here created will be able to predict crab age based on given biometrics and sex. Model will take as input features listed below:</p>
 
 <ul>
