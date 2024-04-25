@@ -1,6 +1,8 @@
 import numpy as np
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestRegressor
+import joblib
+import os
 
 # Input: 2 arrays one containing features and another targets, model alpha, fit_intercept, solver
 # Notice! Defaults are that of the model provided by sklearn
@@ -24,3 +26,21 @@ def create_rf_model(X_train: np.ndarray, y_train: np.ndarray,
     rf_model.fit(X_train, y_train)
 
     return rf_model
+
+
+def save_model(model: RandomForestRegressor)-> None:
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, 'model/rf_model.sav')
+    joblib.dump(model,filename)
+
+
+def load_model() -> RandomForestRegressor:
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, 'model/rf_model.sav')
+    model = joblib.load(filename)
+    return model
+
+def get_model_prediction(input_data: np.ndarray) -> float:
+    model = load_model()
+    prediction = model.predict(input_data)
+    return prediction

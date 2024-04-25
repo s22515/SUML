@@ -5,6 +5,7 @@ from typing import Tuple
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
+import joblib
 
 
 # Input: dataframe with clean data 
@@ -20,6 +21,7 @@ def prepare_cleaned_data(data_cleaned: pd.DataFrame) -> pd.DataFrame:
     scaled_data = scaler.fit_transform(data_cleaned[cols_to_scale])
     scaled_dataframe = pd.DataFrame(scaled_data, columns=cols_to_scale)
     scaled_dataframe = pd.concat([scaled_dataframe, data_cleaned.drop(columns=cols_to_scale)], axis=1)
+    joblib.dump(scaler, 'scaler.bin',compress=True)
 
     # encoding part
 
