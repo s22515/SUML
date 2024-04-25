@@ -39,7 +39,7 @@ viscara_weight = st.number_input("Crab viscara weight", 0.01,22.5)
 shell_weight = st.number_input("Crab shell weight", 0.01,30.0)
 
 
-if st.button('did'):
+if st.button('Predict'):
     volume = length * height * diameter
     weight_proportion = (shucked_weight + viscara_weight + shell_weight) / weight
     shucked_proportion = shucked_weight / weight
