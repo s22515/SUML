@@ -1,7 +1,16 @@
 import pandas as pd
 
-def clean_Data(dataframe: pd.DataFrame) -> pd.DataFrame:
 
+def clean_Data(dataframe: pd.DataFrame) -> pd.DataFrame:
+     """
+    Cleans the input DataFrame by removing rows based on specified conditions.
+
+    Parameters:
+    - dataframe (pd.DataFrame): Input DataFrame containing the data to be cleaned.
+
+    Returns:
+    - pd.DataFrame: Cleaned DataFrame with rows removed based on specified conditions.
+    """
     if len(dataframe) == 0:
         print("Error: The data is empty.")
         return None
