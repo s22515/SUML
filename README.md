@@ -14,7 +14,7 @@
 
 ## Starting app
 1. Start terminal in folder SUML
-2. Avtivate environment using command `conda activate SUML`
+2. Activate environment using command `conda activate SUML`
 3. In terminal use `streamlit run src\app.py`
 
 <h2>Crab age prediction model</h2>
