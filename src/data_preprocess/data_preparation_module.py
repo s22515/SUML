@@ -37,7 +37,7 @@ def prepare_cleaned_data(data_cleaned: pd.DataFrame) -> pd.DataFrame:
     scaled_dataframe = pd.concat(
         [scaled_dataframe, data_cleaned.drop(columns=cols_to_scale)],
         axis=1)
-    joblib.dump(scaler, 'ml/model/scaler.bin', compress=True)
+    joblib.dump(scaler, 'src\ml\model\scaler.bin', compress=True)
 
     # encoding part
 

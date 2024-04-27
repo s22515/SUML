@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def clean_Data(dataframe: pd.DataFrame) -> pd.DataFrame:
-     """
+    """
     Cleans the input DataFrame by removing rows based on specified conditions.
 
     Parameters:

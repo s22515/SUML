@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 
 def import_dataframe_from_csv(path: str) -> pd.DataFrame:
@@ -14,6 +15,7 @@ def import_dataframe_from_csv(path: str) -> pd.DataFrame:
         otherwise an empty DataFrame.
     """
     try:
+        print(os.getcwd())
         imported_data = pd.read_csv(path)
         return imported_data
 

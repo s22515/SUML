@@ -1,8 +1,6 @@
 from ml.model_creator_module import get_model_prediction
 import streamlit as st
-import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler
 import joblib
 import math
 
@@ -70,7 +68,7 @@ if st.button('Predict'):
     shell_proportion = shell_weight / weight
     shell_area = (diameter / 2) ** 2 * math.pi
 
-    scaler = joblib.load('../ml/model/scaler.bin')
+    scaler = joblib.load('src/ml/model/scaler.bin')
     scaled_feature = scaler.transform(
         [
             [
