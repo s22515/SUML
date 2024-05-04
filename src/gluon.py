@@ -15,6 +15,10 @@ test = crabs.drop(train.index)
 train_data = TabularDataset(train)
 test_data = TabularDataset(test)
 
-predictor = TabularPredictor(label="Age", problem_type='regression', eval_metric='r2').fit(train_data)
-predictor.evaluate(test_data, silent=True)
-predictor.leaderboard(test_data)
+predictor = TabularPredictor(label="Age", problem_type='regression', eval_metric='r2').fit(train_data, presets="best_quality")
+
+print(predictor.evaluate(test_data, silent=True))
+
+leaderboard = predictor.leaderboard(test_data)
+
+print(leaderboard.head())
