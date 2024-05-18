@@ -10,7 +10,12 @@
 1. Download and install [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
 2. Download file `environment.yml` from catalog `env`
 3. In terminal use `conda env create -f environment.yml`
-4. Avtivate environment using command `conda activate SUML`
+4. Activate environment using command `conda activate SUML`
+
+## Starting app
+1. Start terminal in folder SUML
+2. Activate environment using command `conda activate SUML`
+3. In terminal use `streamlit run src\app.py`
 
 <h2>Crab age prediction model</h2>
 
