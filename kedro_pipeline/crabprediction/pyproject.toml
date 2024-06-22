@@ -1,0 +1,31 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crabprediction"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+crabprediction = "crabprediction.__main__:main"
+
+[tool.kedro]
+package_name = "crabprediction"
+project_name = "CrabPrediction"
+kedro_init_version = "0.19.6"
+tools = [ "Data Structure", "Kedro Viz",]
+example_pipeline = "True"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "crabprediction.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
