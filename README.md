@@ -12,10 +12,15 @@
 3. In terminal use `conda env create -f environment.yml`
 4. Activate environment using command `conda activate SUML`
 
+## Model creation
+1. Start terminal in folder `kedro_pipeline\crabprediction`
+1. Activate environment using command `conda activate SUML`
+3. In terminal use `kedro run`
+
 ## Starting app
 1. Start terminal in folder SUML
 2. Activate environment using command `conda activate SUML`
-3. In terminal use `streamlit run src\app.py`
+3. In terminal use `streamlit run app.py`
 
 <h2>Crab age prediction model</h2>
 
