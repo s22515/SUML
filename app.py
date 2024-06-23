@@ -1,11 +1,15 @@
-from ml.model_creator_module import get_model_prediction
 import streamlit as st
 import numpy as np
 import joblib
 import math
+import pickle
+import os
 
+models_versions = os.listdir(r'kedro_pipeline\crabprediction\data\06_models\random_forest.pickle')
 
 st.title("Prediction of crab age based on biometric data")
+
+version = st.selectbox('Version:', models_versions)
 
 sex_dixt = {
     "Male": 2,
@@ -68,7 +72,7 @@ if st.button('Predict'):
     shell_proportion = shell_weight / weight
     shell_area = (diameter / 2) ** 2 * math.pi
 
-    scaler = joblib.load('src/ml/model/scaler.bin')
+    scaler = joblib.load(r'kedro_pipeline\crabprediction\data\02_intermediate\scaler.pickle')
     scaled_feature = scaler.transform(
         [
             [
@@ -90,6 +94,9 @@ if st.button('Predict'):
     )
     input_data = np.insert(scaled_feature, 0, sex_dixt[option])
 
-    prediction = get_model_prediction([input_data])
+    path_to_model = os.path.join(r'kedro_pipeline\crabprediction\data\06_models\random_forest.pickle', version, 'random_forest.pickle')
+    
+    model = pickle.load(open(path_to_model, 'rb'))
+    prediction = model.predict([input_data])
 
     st.write('Predicted age of crab:', round(prediction[0], 2))

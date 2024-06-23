@@ -13,16 +13,16 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="cleaned_crabs_node",
             ),
             node(
-                func=prepare_cleaned_data,
-                inputs="cleaned_crabs",
-                outputs=["prepared_crabs", "scaler"],
-                name="prepare_cleaned_crabs_node",
-            ),
-            node(
                 func=enrich_rf_features,
-                inputs="prepared_crabs",
+                inputs="cleaned_crabs",
                 outputs="enriched_rf_input_table",
                 name="create_rf_model_input_table_node",
+            ),
+            node(
+                func=prepare_cleaned_data,
+                inputs="enriched_rf_input_table",
+                outputs=["prepared_crabs", "scaler"],
+                name="prepare_cleaned_crabs_node",
             ),
         ]
     )

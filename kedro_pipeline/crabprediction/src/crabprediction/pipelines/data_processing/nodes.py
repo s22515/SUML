@@ -1,10 +1,7 @@
-from typing import Dict, Tuple
-
 import pandas as pd
 import math
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
 
 
 def clean_data(dataframe: pd.DataFrame) -> pd.DataFrame:
