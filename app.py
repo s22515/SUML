@@ -31,7 +31,7 @@ length = st.number_input(
 diameter = st.number_input(
     "Crab diameter (between 0.1 - 2.0)",
     0.1,
-    2.0)
+    2.0) 
 
 height = st.number_input(
     "Crab height (between 0.1 - 3.0)",
