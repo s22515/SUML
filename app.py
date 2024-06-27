@@ -5,7 +5,7 @@ import math
 import pickle
 import os
 
-models_versions = os.listdir(r'kedro_pipeline\crabprediction\data\06_models\random_forest.pickle')
+models_versions = os.listdir(r'kedro_pipeline\\crabprediction\\data\\06_models\\random_forest.pickle')
 
 st.title("Prediction of crab age based on biometric data")
 
@@ -72,7 +72,7 @@ if st.button('Predict'):
     shell_proportion = shell_weight / weight
     shell_area = (diameter / 2) ** 2 * math.pi
 
-    scaler = joblib.load(r'kedro_pipeline\crabprediction\data\02_intermediate\scaler.pickle')
+    scaler = joblib.load(r'kedro_pipeline\\crabprediction\\data\\02_intermediate\\scaler.pickle')
     scaled_feature = scaler.transform(
         [
             [
@@ -94,7 +94,7 @@ if st.button('Predict'):
     )
     input_data = np.insert(scaled_feature, 0, sex_dixt[option])
 
-    path_to_model = os.path.join(r'kedro_pipeline\crabprediction\data\06_models\random_forest.pickle', version, 'random_forest.pickle')
+    path_to_model = os.path.join(r'kedro_pipeline\\crabprediction\\data\\06_models\\random_forest.pickle', version, 'random_forest.pickle')
     
     model = pickle.load(open(path_to_model, 'rb'))
     prediction = model.predict([input_data])
