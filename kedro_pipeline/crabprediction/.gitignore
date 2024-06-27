@@ -12,13 +12,14 @@ conf/**/*credentials*
 data/**
 
 # except their sub-folders
-!data/**/
+!data/01_raw/*
+!data/02_intermediate/*
+!data/06_models/*
 
 # also keep all .gitkeep files
 !.gitkeep
 
 # keep also the example dataset
-!data/01_raw/*
 
 
 ##########################
